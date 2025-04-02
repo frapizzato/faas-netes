@@ -3,8 +3,8 @@
 # Creates an installation of OpenFaaS in kind for development
 
 set -e
-#contrib/create_cluster.sh || exit 0;
-#contrib/deploy.sh
+contrib/create_cluster.sh || exit 0;
+contrib/deploy.sh
 contrib/run_function.sh
 
 PASSWORD=$(kubectl get secret -n openfaas basic-auth -o=go-template='{{index .data "basic-auth-password"}}' | base64 --decode)
