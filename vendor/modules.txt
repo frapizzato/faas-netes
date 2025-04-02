@@ -1,3 +1,6 @@
+# custom.tls/proxy v0.0.0-00010101000000-000000000000 => ./faas_provider_TLS
+## explicit; go 1.24.1
+custom.tls/proxy
 # github.com/beorn7/perks v1.0.1
 ## explicit; go 1.11
 github.com/beorn7/perks/quantile
@@ -142,13 +145,12 @@ github.com/opencontainers/go-digest
 ## explicit; go 1.18
 github.com/opencontainers/image-spec/specs-go
 github.com/opencontainers/image-spec/specs-go/v1
-# github.com/openfaas/faas-provider v0.25.4
-## explicit; go 1.20
+# github.com/openfaas/faas-provider v0.25.7
+## explicit; go 1.23
 github.com/openfaas/faas-provider
 github.com/openfaas/faas-provider/auth
 github.com/openfaas/faas-provider/httputil
 github.com/openfaas/faas-provider/logs
-github.com/openfaas/faas-provider/proxy
 github.com/openfaas/faas-provider/types
 # github.com/pkg/errors v0.9.1
 ## explicit
@@ -164,7 +166,7 @@ github.com/prometheus/client_golang/prometheus/promhttp
 # github.com/prometheus/client_model v0.6.1
 ## explicit; go 1.19
 github.com/prometheus/client_model/go
-# github.com/prometheus/common v0.61.0
+# github.com/prometheus/common v0.62.0
 ## explicit; go 1.21
 github.com/prometheus/common/expfmt
 github.com/prometheus/common/model
@@ -190,7 +192,7 @@ github.com/x448/float16
 golang.org/x/mod/internal/lazyregexp
 golang.org/x/mod/module
 golang.org/x/mod/semver
-# golang.org/x/net v0.32.0
+# golang.org/x/net v0.33.0
 ## explicit; go 1.18
 golang.org/x/net/http/httpguts
 golang.org/x/net/http2
@@ -203,7 +205,7 @@ golang.org/x/oauth2/internal
 # golang.org/x/sync v0.10.0
 ## explicit; go 1.18
 golang.org/x/sync/errgroup
-# golang.org/x/sys v0.28.0
+# golang.org/x/sys v0.29.0
 ## explicit; go 1.18
 golang.org/x/sys/plan9
 golang.org/x/sys/unix
@@ -250,7 +252,7 @@ golang.org/x/tools/internal/stdlib
 golang.org/x/tools/internal/typeparams
 golang.org/x/tools/internal/typesinternal
 golang.org/x/tools/internal/versions
-# google.golang.org/protobuf v1.35.2
+# google.golang.org/protobuf v1.36.4
 ## explicit; go 1.21
 google.golang.org/protobuf/encoding/protodelim
 google.golang.org/protobuf/encoding/prototext
@@ -272,6 +274,7 @@ google.golang.org/protobuf/internal/genid
 google.golang.org/protobuf/internal/impl
 google.golang.org/protobuf/internal/order
 google.golang.org/protobuf/internal/pragma
+google.golang.org/protobuf/internal/protolazy
 google.golang.org/protobuf/internal/set
 google.golang.org/protobuf/internal/strs
 google.golang.org/protobuf/internal/version
@@ -822,3 +825,4 @@ sigs.k8s.io/structured-merge-diff/v4/value
 ## explicit; go 1.12
 sigs.k8s.io/yaml
 sigs.k8s.io/yaml/goyaml.v2
+# custom.tls/proxy => ./faas_provider_TLS

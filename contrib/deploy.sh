@@ -16,7 +16,10 @@ helm upgrade \
     --install \
     openfaas \
     ./chart/openfaas \
-    --namespace openfaas
+    --namespace openfaas \
+    --set openfaasImagePullPolicy=IfNotPresent \
+    --set faasnetes.image=hub.docker.com/frapizzato/faas-netes:latest \
+    --set functionNamespace=openfaas-fn \
 
 kubectl --context "kind-$DEVENV" rollout status deploy/prometheus -n openfaas
 kubectl --context "kind-$DEVENV" rollout status deploy/gateway -n openfaas

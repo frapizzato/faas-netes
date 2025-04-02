@@ -24,7 +24,10 @@ import (
 	version "github.com/openfaas/faas-netes/version"
 	faasProvider "github.com/openfaas/faas-provider"
 	"github.com/openfaas/faas-provider/logs"
-	"github.com/openfaas/faas-provider/proxy"
+
+	//"github.com/openfaas/faas-provider/proxy"
+	"custom.tls/proxy"
+
 	providertypes "github.com/openfaas/faas-provider/types"
 
 	kubeinformers "k8s.io/client-go/informers"
@@ -199,7 +202,7 @@ func runController(setup serverSetup) {
 
 	printFunctionExecutionTime := true
 
-	proxyHandler := proxy.NewHandlerFunc(config.FaaSConfig, functionLookup, printFunctionExecutionTime)
+	proxyHandler := proxy.NewHandlerFunc_TLS(config.FaaSConfig, functionLookup, printFunctionExecutionTime)
 
 	if err := handlers.Check(functionList); err != nil {
 		msg := fmt.Sprintf("Function invocations disabled due to error: %s.", err.Error())

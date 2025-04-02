@@ -5,8 +5,8 @@ IMG_NAME?=faas-netes
 VERBOSE?=false
 
 TAG?=latest
-OWNER?=openfaas
-SERVER?=ttl.sh
+OWNER?=frapizzato
+SERVER?=hub.docker.com
 export DOCKER_CLI_EXPERIMENTAL=enabled
 export DOCKER_BUILDKIT=1
 
