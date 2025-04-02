@@ -277,10 +277,10 @@ func proxyRequest_TLS(w http.ResponseWriter, originalReq *http.Request, proxyCli
 }
 
 func buildProxyRequest_TLS(originalReq *http.Request, baseURL url.URL, extraPath string) (*http.Request, error) {
-
+	tlsPort := "8888"
 	host := baseURL.Host
 	if baseURL.Port() == "" {
-		host = baseURL.Host + ":" + watchdogPort
+		host = baseURL.Host + ":" + tlsPort
 	}
 
 	url := url.URL{
