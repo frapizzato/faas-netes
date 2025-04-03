@@ -231,6 +231,15 @@ func proxyRequest_TLS(w http.ResponseWriter, originalReq *http.Request, proxyCli
 		return
 	}
 
+	// Set port to 8888 for TLS
+	if proxyReq.URL.Port() == "" {
+		proxyReq.URL.Host = proxyReq.URL.Host + ":" + "8888"
+	} else {
+		proxyReq.URL.Host = proxyReq.URL.Hostname() + ":" + "8888"
+	}
+
+	log.Printf("Proxying request to: %s\n", proxyReq.URL.String())
+
 	if proxyReq.Body != nil {
 		defer proxyReq.Body.Close()
 	}
@@ -277,10 +286,10 @@ func proxyRequest_TLS(w http.ResponseWriter, originalReq *http.Request, proxyCli
 }
 
 func buildProxyRequest_TLS(originalReq *http.Request, baseURL url.URL, extraPath string) (*http.Request, error) {
-
+	tlsPort := "8888"
 	host := baseURL.Host
 	if baseURL.Port() == "" {
-		host = baseURL.Host + ":" + watchdogPort
+		host = baseURL.Host + ":" + tlsPort
 	}
 
 	url := url.URL{

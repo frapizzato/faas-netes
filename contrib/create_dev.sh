@@ -4,6 +4,10 @@
 
 set -e
 contrib/create_cluster.sh || exit 0;
+
+kind load docker-image --name="${OF_DEV_ENV:-kind}" hub.docker.com/frapizzato/faas-netes
+
+
 contrib/deploy.sh
 contrib/run_function.sh
 
